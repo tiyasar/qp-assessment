@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+      MYSQL_DATABASE: grocery
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - appnetwork
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+
+  myspringbootapp:
+    build: ./target/grocery-booking-app.jar
+    container_name: grocery_booking_app_container
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/grocery
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: userpassword
+    depends_on:
+      - mysql
+    networks:
+      - appnetwork
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+
+networks:
+  appnetwork:
+    driver: bridge

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: grocery-booking
+
+  datasource:
+    url: jdbc:mysql://localhost/grocery
+    username: root
+    password: user123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+  main:
+    allow-circular-references: true
+
+security:
+  jwt:
+    secret-key: TaK+HaV^uvCHEFsEVfypW#7g9^k*Z8$V
+    expiration-time: 3600000
