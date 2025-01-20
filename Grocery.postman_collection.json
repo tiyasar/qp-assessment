@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "697e7a88-aa78-4609-af43-4f834b0f23aa",
+		"name": "Grocery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22730679"
+	},
+	"item": [
+		{
+			"name": "Grocery Item",
+			"item": [
+				{
+					"name": "Create Grocery Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aXlhc2FAeW9wbWFpbC5jb20iLCJpYXQiOjE3MzczODMyNjQsImV4cCI6MTczNzM4Njg2NH0.tWuMoJggpHoft-5RyW8JfB276SrUcmt7QEc320XQK3g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test123\",\n    \"price\": 2,\n    \"inventory\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/grocery",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"grocery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Grocery Items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aXlhc2FAeW9wbWFpbC5jb20iLCJpYXQiOjE3MzczODMyNjQsImV4cCI6MTczNzM4Njg2NH0.tWuMoJggpHoft-5RyW8JfB276SrUcmt7QEc320XQK3g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/grocery",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"grocery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Grocery Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aXlhc2FAeW9wbWFpbC5jb20iLCJpYXQiOjE3MzczODMyNjQsImV4cCI6MTczNzM4Njg2NH0.tWuMoJggpHoft-5RyW8JfB276SrUcmt7QEc320XQK3g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inventory\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/grocery/:groceryItemId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"grocery",
+								":groceryItemId"
+							],
+							"variable": [
+								{
+									"key": "groceryItemId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Grocery Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aXlhc2FAeW9wbWFpbC5jb20iLCJpYXQiOjE3MzczODMyNjQsImV4cCI6MTczNzM4Njg2NH0.tWuMoJggpHoft-5RyW8JfB276SrUcmt7QEc320XQK3g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/grocery/:groceryItemId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"grocery",
+								":groceryItemId"
+							],
+							"variable": [
+								{
+									"key": "groceryItemId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"hk\",\n    \"email\": \"abc\",\n    \"password\": \"jgju\",\n    \"role\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/signup",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@yopmail.com\",\n    \"password\": \"tiyasa123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/user/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
