@@ -243,6 +243,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Grocery Items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMkB5b3BtYWlsLmNvbSIsImlhdCI6MTczNzQzNDgwMCwiZXhwIjoxNzM3NDM4NDAwfQ.gus42T5BNYCq6fzaAcJbiLFaFliHjxIwe8lm8a85iAY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/user/grocery",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"grocery"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
